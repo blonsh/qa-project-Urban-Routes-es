@@ -1,9 +1,9 @@
- # Qa-project-Urban-Routes-es
+# QA Project Urban Routes
 
----
-## Descripción del proyecto
+### Descripción del proyecto
 
 Proyecto de automatización de pruebas funcionales para validar el correcto funcionamiento de la aplicación Urban Routes, asegurando calidad, estabilidad y detección temprana de errores en flujos críticos.
+
 
 ### Tecnologías utilizadas
 
@@ -51,11 +51,10 @@ Para ejecutar un archivo específico:
 ```bash
 pytest test_urban_routes.py
 ```
-
-## 👩‍💻 Author
+------
+**Author**
 
 QA Blanca Sánchez
 
----
 
 

@@ -1,28 +1,61 @@
-# Proyecto Urban Grocers 
+ # Qa-project-Urban-Routes-es
 
-### Descripción del proyecto
+---
+## Descripción del proyecto
 
-Este proyecto de pruebas automatizadas está diseñado para validar la funcionalidad de creación de kits de productos en la aplicación Urban Grocers.
+Proyecto de automatización de pruebas funcionales para validar el correcto funcionamiento de la aplicación Urban Routes, asegurando calidad, estabilidad y detección temprana de errores en flujos críticos.
 
-### Fuente de documentación utilizada
-La documentación utilizada para el desarrollo de las pruebas fue generada con **apiDoc**,
-la cual permitió identificar los endpoints, parámetros requeridos y validaciones esperadas.
+### Tecnologías utilizadas
 
-### Tecnologías y técnicas utilizadas
+- **Lenguaje:** Python 3.14
+- **Framework de pruebas:** pytest
+- **Automatización de navegador:** Selenium WebDriver
+- **Otras librerías:** requests
 
-**Lenguaje de programación:**
-- Python 3
-- requests
-- pytest
+---
 
-### Estructura del proyecto
 
-```text
-qa-project-Urban-Grocers-app-es/
-│
-├── create_kit_name_kit_test.py   # Casos de prueba
-├── sender_stand_request.py       # Envío de solicitudes HTTP
-├── configuration.py              # URLs y endpoints
-├── data.py                       # Datos de prueba
-├── requirements.txt              # Dependencias
-└── README.md                     # Documentación del proyecto
+### Instalación y configuración
+
+1. Clona el repositorio:
+
+```bash
+git clone git@github.com:blonsh/qa-project-Urban-Routes-es.git
+```
+
+2. Crea y activa el entorno virtual:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Ejecución de pruebas
+
+Para ejecutar todas las pruebas:
+
+```bash
+pytest
+```
+
+Para ejecutar un archivo específico:
+
+```bash
+pytest test_urban_routes.py
+```
+
+## 👩‍💻 Author
+
+QA Blanca Sánchez
+
+---
+
+

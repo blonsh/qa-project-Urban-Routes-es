@@ -20,15 +20,15 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 
 ## Lista de comprobación automatizada
 
-** [ ] Configurar dirección (origen y destino)
-** [ ] Seleccionar tarifa Comfort
-** [ ] Rellenar número de teléfono
-** [ ] Agregar tarjeta de crédito (con manejo del CVV y pérdida de foco)
-** [ ] Escribir mensaje al conductor
-** [ ] Pedir manta y pañuelos
-** [ ] Pedir 2 helados
-** [ ] Aparece modal para buscar taxi
-** [ ] (Opcional) Esperar información del conductor
+- Configurar dirección (origen y destino)
+- Seleccionar tarifa Comfort
+- Rellenar número de teléfono
+- Agregar tarjeta de crédito (con manejo del CVV y pérdida de foco)
+- Escribir mensaje al conductor
+- Pedir manta y pañuelos
+- Pedir 2 helados
+- Aparece modal para buscar taxi
+- (Opcional) Esperar información del conductor
 
 ---
 

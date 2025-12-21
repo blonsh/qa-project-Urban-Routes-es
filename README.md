@@ -1,8 +1,11 @@
 # Proyecto de Automatización: **Solicitud de Taxi Comfort en Urban Routes**
+![image](https://github.com/user-attachments/assets/a682bd95-b471-47ff-b172-db9a418a01f3)
 
 ## 🚖 Descripción del Proyecto
 
-Este proyecto implementa **pruebas automatizadas end-to-end** para la aplicación **Urban Routes**, enfocada en la solicitud de taxis tipo *Comfort*. Las pruebas simulan el flujo completo de reserva del servicio, validando funcionalidades clave como:
+Este proyecto implementa **pruebas automatizadas end-to-end** para la aplicación **Urban Routes**, enfocada en la solicitud de taxis tipo *Comfort*. 
+
+Las pruebas simulan el flujo completo de reserva del servicio, validando funcionalidades clave como:
 
 - Selección de origen y destino
 - Elección de tarifa Comfort
@@ -17,15 +20,15 @@ Este proyecto implementa **pruebas automatizadas end-to-end** para la aplicació
 
 ## Lista de comprobación automatizada
 
-- [x] Establecer URL del servidor
-- [x] Seleccionar ubicación inicial y destino
-- [x] Elegir tarifa **Comfort**
-- [x] Ingresar número telefónico para validación
-- [x] Agregar tarjeta de crédito como método de pago
-- [x] Escribir un mensaje al conductor
-- [x] Solicitar manta y pañuelos
-- [x] Pedir **2 helados**
-- [x] Confirmar y activar modal de “Buscando taxi…”
+** [ ] Configurar dirección (origen y destino)
+** [ ] Seleccionar tarifa Comfort
+** [ ] Rellenar número de teléfono
+** [ ] Agregar tarjeta de crédito (con manejo del CVV y pérdida de foco)
+** [ ] Escribir mensaje al conductor
+** [ ] Pedir manta y pañuelos
+** [ ] Pedir 2 helados
+** [ ] Aparece modal para buscar taxi
+** [ ] (Opcional) Esperar información del conductor
 
 ---
 
@@ -69,8 +72,9 @@ Para correr las pruebas, utiliza el siguiente comando desde la terminal:
 ```bash
   pytest -v
 ```
+![image](https://github.com/user-attachments/assets/09c36110-0e94-453d-ae46-e5b4cb562fb8)
 
-QA Blanca Sánchez
+##QA Blanca Sánchez
 
 
 

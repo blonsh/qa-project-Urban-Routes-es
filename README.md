@@ -1,8 +1,7 @@
-# Proyecto de Automatización: **Solicitud de Taxi Comfort en Urban Routes**
+# Proyecto de Automatización
 ![image](https://github.com/user-attachments/assets/a682bd95-b471-47ff-b172-db9a418a01f3)
 
 ## 🚖 Descripción del Proyecto
-
 Este proyecto implementa **pruebas automatizadas end-to-end** para la aplicación **Urban Routes**, enfocada en la solicitud de taxis tipo *Comfort*. 
 
 Las pruebas simulan el flujo completo de reserva del servicio, validando funcionalidades clave como:
@@ -16,8 +15,6 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 - Confirmación de viaje
 - Visualización de datos clave: nombre del conductor, placas del vehículo, tiempo estimado de llegada
 
----
-
 ## Lista de comprobación automatizada
 
 - Configurar dirección (origen y destino)
@@ -30,7 +27,7 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 - Aparece modal para buscar taxi
 - (Opcional) Esperar información del conductor
 
----
+![image](https://github.com/user-attachments/assets/09c36110-0e94-453d-ae46-e5b4cb562fb8)
 
 ## Tecnologías Utilizadas
 
@@ -42,8 +39,6 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 | **Pytest** | Framework de testing para ejecución y organización de pruebas |
 | **Git Bash** | CLI para uso de Git en Windows |
 | **GitHub** | Repositorio para versionado y colaboración del código |
-
----
 
 ## Instrucciones de Instalación
 
@@ -62,9 +57,7 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
    pip install selenium
    pip install pytest
    ```
-
----
-
+   
 ## Ejecución de Pruebas
 
 Para correr las pruebas, utiliza el siguiente comando desde la terminal:
@@ -72,9 +65,8 @@ Para correr las pruebas, utiliza el siguiente comando desde la terminal:
 ```bash
   pytest -v
 ```
-![image](https://github.com/user-attachments/assets/09c36110-0e94-453d-ae46-e5b4cb562fb8)
 
-##QA Blanca Sánchez
+QA Blanca Sánchez
 
 
 

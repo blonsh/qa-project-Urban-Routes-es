@@ -1,4 +1,4 @@
-#!/Users/blancasanchez/PycharmProjects/projects_tripleten/qa-project-urban-routes-es/.venv/bin/python3.12
+#!/Users/blancasanchez/qa-project-Urban-Routes-app-es/.venv/bin/python
 import sys
 from pytest import console_main
 if __name__ == '__main__':

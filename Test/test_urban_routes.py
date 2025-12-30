@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from pages.urban_routes_page import UrbanRoutesPage
-from main import retrieve_phone_code
+from helpers import retrieve_phone_code
 
 
 class TestUrbanRoutes:
@@ -40,10 +40,12 @@ class TestUrbanRoutes:
         self.page.add_blanket()
         self.page.add_ice_creams(2)
 
-        # 6. Finalizar
+        # 6. Finalizar y buscar taxi
         self.page.search_taxi()
 
-        # Verificación: ¿Apareció el modal de búsqueda?
+        # 7. Validar que el modal de búsqueda apareció
+        # Buscamos el elemento que tiene la cuenta regresiva o el estado de búsqueda
+        self.page.wait_for_driver_info()
         assert self.driver.find_element(By.CLASS_NAME, "order-header-title").is_displayed()
 
     @classmethod

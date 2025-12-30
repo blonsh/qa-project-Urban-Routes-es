@@ -41,7 +41,7 @@ qa-project-Urban-Routes-es/
 │   └── urban_routes_page.py  # Pagina específica Urban Routes
 ├── Test/                # Casos de prueba
 │   └── test_urban_routes.py   # Tests E2E
-├── Images/              # Imagen del  proyecto
+├── Images/              # Imagen del proyecto
 └── README.md            # Documentación del proyecto
 ```
 

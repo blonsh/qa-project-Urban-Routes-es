@@ -31,7 +31,7 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 
 ## Estructura del proyecto
 
-``
+```
 qa-project-Urban-Routes-es/
 ├── data.py              # Datos estaticos para pruebas
 ├── helpers.py           # Funciones auxiliares (SMS code extraction)
@@ -43,7 +43,7 @@ qa-project-Urban-Routes-es/
 │   └── test_urban_routes.py   # Tests E2E
 ├── Images/              # Imagen del  proyecto
 └── README.md            # Documentación del proyecto
-``
+```
 
 ## Tecnologías Utilizadas
 

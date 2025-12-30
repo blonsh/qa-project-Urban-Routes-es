@@ -1,8 +1,8 @@
 import data
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from pages.urban_routes_page import UrbanRoutesPage
-# Esto importa la función del archivo main.py
 from main import retrieve_phone_code
 
 
@@ -14,6 +14,7 @@ class TestUrbanRoutes:
         options = Options()
         options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
         cls.driver = webdriver.Chrome(options=options)
+        cls.driver.maximize_window()
         cls.driver.implicitly_wait(10)
         cls.driver.get(data.urban_routes_url)
         cls.page = UrbanRoutesPage(cls.driver)
@@ -23,7 +24,7 @@ class TestUrbanRoutes:
         self.page.set_route(data.address_from, data.address_to)
         self.page.order_taxi()
 
-        # 2. Comfort
+        # 2. Selección del modo Comfort
         self.page.select_comfort()
 
         # 3. Teléfono y SMS
@@ -31,7 +32,7 @@ class TestUrbanRoutes:
         code = retrieve_phone_code(self.driver)
         self.page.fill_sms_code(code)
 
-        # 4. Tarjeta (con el TAB interno en el método add_card)
+        # 4. Agregar una Tarjeta
         self.page.add_card(data.card_number, data.card_code)
 
         # 5. Mensaje y extras
@@ -43,7 +44,6 @@ class TestUrbanRoutes:
         self.page.search_taxi()
 
         # Verificación: ¿Apareció el modal de búsqueda?
-        from selenium.webdriver.common.by import By
         assert self.driver.find_element(By.CLASS_NAME, "order-header-title").is_displayed()
 
     @classmethod

@@ -16,27 +16,27 @@ class TestUrbanRoutes:
         cls.driver = webdriver.Chrome(options=options)
         cls.driver.maximize_window()
         cls.driver.implicitly_wait(10)
-        cls.driver.get(data.urban_routes_url)
+        cls.driver.get(data.URBAN_ROUTES_URL)
         cls.page = UrbanRoutesPage(cls.driver)
 
     def test_complete_order_flow(self):
         # 1. Direcciones
-        self.page.set_route(data.address_from, data.address_to)
+        self.page.set_route(data.ADDRESS_FROM, data.ADDRESS_TO)
         self.page.order_taxi()
 
         # 2. Selección del modo Comfort
         self.page.select_comfort()
 
         # 3. Teléfono y SMS
-        self.page.fill_phone(data.phone_number)
+        self.page.fill_phone(data.PHONE_NUMBER)
         code = retrieve_phone_code(self.driver)
         self.page.fill_sms_code(code)
 
         # 4. Agregar una Tarjeta
-        self.page.add_card(data.card_number, data.card_code)
+        self.page.add_card(data.CARD_NUMBER, data.CARD_CODE)
 
         # 5. Mensaje y extras
-        self.page.add_message(data.message_for_driver)
+        self.page.add_message(data.MESSAGE_FOR_DRIVER)
         self.page.add_blanket()
         self.page.add_ice_creams(2)
 

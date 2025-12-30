@@ -2,10 +2,10 @@
 Este módulo contiene todos los datos estáticos necesarios para las pruebas
 de la aplicación Urban Routes.
 """
-urban_routes_url = "https://cnt-7f77b931-62a7-47ec-8b05-c235f2edda78.containerhub.tripleten-services.com?lng=es"
-address_from = 'East 2nd Street, 601'
-address_to = '1300 1st St'
-phone_number = '+11234567890'
-card_number = '1234 5678 9100'
-card_code = '111'
-message_for_driver = 'Traer dos cafés'
+URBAN_ROUTES_URL = "https://cnt-7f77b931-62a7-47ec-8b05-c235f2edda78.containerhub.tripleten-services.com?lng=es"
+ADDRESS_FROM = 'East 2nd Street, 601'
+ADDRESS_TO = '1300 1st St'
+PHONE_NUMBER = '+11234567890'
+CARD_NUMBER = '1234 5678 9100'
+CARD_CODE = '111'
+MESSAGE_FOR_DRIVER = 'Traer dos cafés'

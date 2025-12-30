@@ -42,7 +42,6 @@ class UrbanRoutesPage(BasePage):
 
     def select_comfort(self):
         self.click(self.COMFORT)
-        time.sleep(1)
 
     def fill_phone(self, phone):
         self.click(self.PHONE_BUTTON)
@@ -52,53 +51,44 @@ class UrbanRoutesPage(BasePage):
     def fill_sms_code(self, code):
         self.type(self.CODE_INPUT, code)
         self.click(self.CONFIRM_CODE)
-        time.sleep(2)
 
     def add_card(self, number, cvv):
         self.click(self.CARD_BUTTON)
         self.click(self.CARD_OPTION)
-        time.sleep(1)
 
-        # 1. Capturar número de tarjeta
+        # Capturar número de tarjeta
         self.type(self.CARD_INPUT, number)
-        time.sleep(1)
 
-        # 2. Capturar CVV
+        # Capturar CVV
         cvv_el = self.driver.find_element(*self.CVV_INPUT)
         cvv_el.send_keys(cvv + Keys.TAB)
 
-        # 3. CLIC EN LA PANTALLA (Para habilitar el botón)
+        # CLIC EN LA PANTALLA (Para habilitar el botón)
         self.click(self.MODAL_CONTENT)
 
-        # 4. PRESIONAR AGREGAR
+        # PRESIONAR AGREGAR
         self.click(self.ADD_CARD_SUBMIT)
-        time.sleep(1)
 
-        # 5. CERRAR MODAL
+        # CERRAR MODAL
         self.click(self.CLOSE_PAYMENT_MODAL)
-        time.sleep(1)
 
     def add_message(self, message):
         self.type(self.DRIVER_MESSAGE, message)
-        time.sleep(1)
 
     def add_blanket(self):
         self.click(self.BLANKET)
-        time.sleep(1)
 
     def add_ice_creams(self, amount=2):
         for _ in range(amount):
             self.click(self.ICE_CREAM_PLUS)
-        time.sleep(1)
 
     def search_taxi(self):
         wait = WebDriverWait(self.driver, 20)
         button = wait.until(EC.element_to_be_clickable(self.SEARCH_TAXI))
         button.click()
-        time.sleep(1)
 
     def wait_for_driver_info(self):
         WebDriverWait(self.driver, 60).until(
             EC.visibility_of_element_located((By.CLASS_NAME, "order-number"))
         )
-        time.sleep(1)
+        time.sleep(2)

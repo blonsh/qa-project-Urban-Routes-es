@@ -1,6 +1,6 @@
 """
-Este módulo contiene todos los datos estáticos necesarios para las pruebas
-de la aplicación Urban Routes.
+Este módulo contiene todos los datos estáticos necesarios
+para las pruebas de la aplicación Urban Routes.
 """
 URBAN_ROUTES_URL = "https://cnt-7f77b931-62a7-47ec-8b05-c235f2edda78.containerhub.tripleten-services.com?lng=es"
 ADDRESS_FROM = 'East 2nd Street, 601'

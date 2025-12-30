@@ -20,7 +20,7 @@ class TestUrbanRoutes:
         cls.page = UrbanRoutesPage(cls.driver)
 
     def test_complete_order_flow(self):
-        # Establecer ruta de viaje e iniciar la solicitud de transporte
+        # Establecer la ruta de viaje e iniciar la solicitud de transporte
         self.page.set_route(data.ADDRESS_FROM, data.ADDRESS_TO)
         self.page.order_taxi()
 

@@ -23,7 +23,6 @@ class UrbanRoutesPage(BasePage):
     CARD_OPTION = (By.CSS_SELECTOR, ".pp-plus-container")
     CARD_INPUT = (By.ID, "number")
     CVV_INPUT = (By.NAME, "code")
-    # Añadido para que el clic fuera del CVV funcione:
     MODAL_TITLE = (By.XPATH, "//div[text()='Agregar tarjeta']")
     ADD_CARD_SUBMIT = (By.XPATH, "//button[text()='Agregar']")
     MODAL_CONTENT = (By.CLASS_NAME, "payment-picker")

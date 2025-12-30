@@ -20,31 +20,28 @@ class TestUrbanRoutes:
         cls.page = UrbanRoutesPage(cls.driver)
 
     def test_complete_order_flow(self):
-        # 1. Direcciones
+        # Establecer ruta de viaje e iniciar la solicitud de transporte
         self.page.set_route(data.ADDRESS_FROM, data.ADDRESS_TO)
         self.page.order_taxi()
 
-        # 2. Selección del modo Comfort
+        # Selección del modo Comfort
         self.page.select_comfort()
 
-        # 3. Teléfono y SMS
+        # Captura de Teléfono y validación de SMS
         self.page.fill_phone(data.PHONE_NUMBER)
         code = retrieve_phone_code(self.driver)
         self.page.fill_sms_code(code)
 
-        # 4. Agregar una Tarjeta
+        # Agregar una Tarjeta y CVV
         self.page.add_card(data.CARD_NUMBER, data.CARD_CODE)
 
-        # 5. Mensaje y extras
+        # Mensaje para el conductor y solicitud de extras
         self.page.add_message(data.MESSAGE_FOR_DRIVER)
         self.page.add_blanket()
         self.page.add_ice_creams(2)
 
-        # 6. Finalizar y buscar taxi
+        # Buscar taxi
         self.page.search_taxi()
-
-        # 7. Validar que el modal de búsqueda apareció
-        # Buscamos el elemento que tiene la cuenta regresiva o el estado de búsqueda
         self.page.wait_for_driver_info()
         assert self.driver.find_element(By.CLASS_NAME, "order-header-title").is_displayed()
 

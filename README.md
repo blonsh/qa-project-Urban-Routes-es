@@ -29,6 +29,22 @@ Las pruebas simulan el flujo completo de reserva del servicio, validando funcion
 
 ![image](https://github.com/user-attachments/assets/09c36110-0e94-453d-ae46-e5b4cb562fb8)
 
+## Estructura del proyecto
+
+``
+qa-project-Urban-Routes-es/
+├── data.py              # Datos estaticos para pruebas
+├── helpers.py           # Funciones auxiliares (SMS code extraction)
+├── requirements.txt     # Dependencias del proyecto
+├── pages/               # Page Object Model
+│   ├── base_page.py     # Clase base para paginas
+│   └── urban_routes_page.py  # Pagina específica Urban Routes
+├── Test/                # Casos de prueba
+│   └── test_urban_routes.py   # Tests E2E
+├── Images/              # Imagen del  proyecto
+└── README.md            # Documentación del proyecto
+``
+
 ## Tecnologías Utilizadas
 
 | Herramienta | Descripción |

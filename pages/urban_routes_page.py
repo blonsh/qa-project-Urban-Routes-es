@@ -36,9 +36,7 @@ class UrbanRoutesPage(BasePage):
 
     def set_route(self, start, end):
         self.type(self.FROM, start)
-        time.sleep(1)
         self.type(self.TO, end)
-        time.sleep(1)
 
     def order_taxi(self):
         self.click(self.ORDER_BUTTON)

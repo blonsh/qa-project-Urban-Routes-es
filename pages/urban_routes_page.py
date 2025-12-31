@@ -30,8 +30,13 @@ class UrbanRoutesPage(BasePage):
 
     DRIVER_MESSAGE = (By.ID, "comment")
     BLANKET = (By.CSS_SELECTOR, "span.slider.round")
+    BLANKET_INPUT = (By.CSS_SELECTOR, ".r-sw input")
     ICE_CREAM_PLUS = (By.CLASS_NAME, "counter-plus")
+    ICE_CREAM_VALUE = (By.XPATH, "//div[text()='Helado']/following-sibling::div//div[@class='counter-value']")
+
     SEARCH_TAXI = (By.XPATH, "//span[text()='Pedir un taxi']/parent::button")
+    ORDER_BODY = (By.CLASS_NAME, "order-body")
+    ORDER_HEADER_TITLE = (By.CLASS_NAME, "order-header-title")
 
     def set_route(self, start, end):
         self.type(self.FROM, start)
@@ -55,28 +60,20 @@ class UrbanRoutesPage(BasePage):
     def add_card(self, number, cvv):
         self.click(self.CARD_BUTTON)
         self.click(self.CARD_OPTION)
-
-        # Capturar número de tarjeta
         self.type(self.CARD_INPUT, number)
-
-        # Capturar CVV
         cvv_el = self.driver.find_element(*self.CVV_INPUT)
         cvv_el.send_keys(cvv + Keys.TAB)
-
-        # CLIC EN LA PANTALLA (Para habilitar el botón)
         self.click(self.MODAL_CONTENT)
-
-        # PRESIONAR AGREGAR
         self.click(self.ADD_CARD_SUBMIT)
-
-        # CERRAR MODAL
         self.click(self.CLOSE_PAYMENT_MODAL)
 
     def add_message(self, message):
         self.type(self.DRIVER_MESSAGE, message)
 
     def add_blanket(self):
-        self.click(self.BLANKET)
+        element = self.driver.find_element(*self.BLANKET)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        element.click()
 
     def add_ice_creams(self, amount=2):
         for _ in range(amount):
@@ -92,3 +89,38 @@ class UrbanRoutesPage(BasePage):
             EC.visibility_of_element_located((By.CLASS_NAME, "order-number"))
         )
         time.sleep(2)
+
+    def get_from_value(self):
+        return self.driver.find_element(*self.FROM).get_attribute('value')
+
+    def get_to_value(self):
+        return self.driver.find_element(*self.TO).get_attribute('value')
+
+    def get_selected_rate_text(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".t-container.active"))
+        )
+        return element.text
+
+    def get_phone_value(self):
+        return self.driver.find_element(*self.PHONE_BUTTON).text
+
+    def is_card_added(self):
+        # Verifica que el texto del botón de pago ya no sea el de defecto
+        return self.driver.find_element(*self.CARD_BUTTON).text != ""
+
+    def get_message_value(self):
+        return self.driver.find_element(*self.DRIVER_MESSAGE).get_attribute('value')
+
+    def is_blanket_selected(self):
+        # Buscamos el input real para el check de selección
+        return self.driver.find_element(*self.BLANKET_INPUT).is_selected()
+
+    def get_ice_cream_count(self):
+        return self.driver.find_element(*self.ICE_CREAM_VALUE).text
+
+    def is_search_modal_visible(self):
+        return self.driver.find_element(*self.ORDER_BODY).is_displayed()
+
+    def is_driver_assigned(self):
+        return self.driver.find_element(*self.ORDER_HEADER_TITLE).is_displayed()

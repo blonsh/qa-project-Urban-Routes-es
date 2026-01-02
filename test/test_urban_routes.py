@@ -30,7 +30,7 @@ class TestUrbanRoutes:
         self.page.select_comfort()
         assert "Comfort" in self.page.get_selected_rate_text()
 
-    # Rellenar el número de teléfono
+    # Capturar el número de teléfono
     def test_fill_phone_number(self):
         self.page.fill_phone(data.PHONE_NUMBER)
         code = retrieve_phone_code(self.driver)

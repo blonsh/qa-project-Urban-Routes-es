@@ -110,15 +110,13 @@ class UrbanRoutesPage(BasePage):
         return self.driver.find_element(*self.PHONE_BUTTON).text
 
     def is_card_added(self):
-        # Verifica que el texto del botón de pago ya no sea el de defecto
         return self.driver.find_element(*self.CARD_BUTTON).text != ""
 
     def get_message_value(self):
         return self.driver.find_element(*self.DRIVER_MESSAGE).get_attribute('value')
 
     def is_blanket_selected(self):
-        # Buscamos el input real para el check de selección
-        return self.driver.find_element(*self.BLANKET_INPUT).is_selected()
+        return self.driver.find_element(*self.BLANKET_INPUT).get_property('checked')
 
     def get_ice_cream_count(self):
         return self.driver.find_element(*self.ICE_CREAM_VALUE).text

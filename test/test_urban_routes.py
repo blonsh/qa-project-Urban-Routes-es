@@ -1,4 +1,5 @@
 import data
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from pages.urban_routes_page import UrbanRoutesPage
@@ -61,10 +62,11 @@ class TestUrbanRoutes:
         self.page.search_taxi()
         assert self.page.is_search_modal_visible()
 
-    # 9. Esperar la información del conductor
+    # Esperar la información del conductor
     def test_wait_for_driver_info(self):
         self.page.wait_for_driver_info()
         assert self.page.is_driver_assigned()
+        time.sleep(2)
 
     @classmethod
     def teardown_class(cls):

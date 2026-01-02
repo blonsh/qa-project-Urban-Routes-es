@@ -12,6 +12,7 @@ class UrbanRoutesPage(BasePage):
     TO = (By.ID, "to")
     ORDER_BUTTON = (By.CSS_SELECTOR, ".button.round")
     COMFORT = (By.XPATH, "//div[text()='Comfort']")
+    SELECTED_CARD = (By.CSS_SELECTOR, ".tcard.active")
 
     PHONE_BUTTON = (By.CLASS_NAME, "np-text")
     PHONE_INPUT = (By.ID, "phone")
@@ -46,7 +47,9 @@ class UrbanRoutesPage(BasePage):
         self.click(self.ORDER_BUTTON)
 
     def select_comfort(self):
-        self.click(self.COMFORT)
+        wait = WebDriverWait(self.driver, 15)
+        comfort = wait.until(EC.element_to_be_clickable(self.COMFORT))
+        comfort.click()
 
     def fill_phone(self, phone):
         self.click(self.PHONE_BUTTON)
@@ -97,8 +100,9 @@ class UrbanRoutesPage(BasePage):
         return self.driver.find_element(*self.TO).get_attribute('value')
 
     def get_selected_rate_text(self):
+        selector = (By.CSS_SELECTOR, ".tcard.active")
         element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".t-container.active"))
+            EC.visibility_of_element_located(selector)
         )
         return element.text
 
